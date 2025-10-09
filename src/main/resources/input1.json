@@ -1,0 +1,19 @@
+{
+  "rootElement": {
+    "name": "IITR00122025Abstract",
+    "namespace": "http://www.sbr.gov.au/ato/iitr"
+  },
+  "elements": [
+    {
+      "path": ["IITR00122025Abstract", "IncomeDetails"],
+      "name": "Act",
+      "attributes": { "code": "AU", "currency": "AUD" },
+      "value": "Income Tax Assessment Act 1997"
+    },
+    {
+      "path": ["IITR00122025Abstract", "IncomeDetails"],
+      "name": "Schedule",
+      "values": ["1", "2", "3"]
+    }
+  ]
+}

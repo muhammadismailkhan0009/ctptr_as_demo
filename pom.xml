@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.5</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.seotrove</groupId>
+    <artifactId>demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>demo</name>
+    <description>demo</description>
+    <url/>
+    <licenses>
+        <license/>
+    </licenses>
+    <developers>
+        <developer/>
+    </developers>
+    <scm>
+        <connection/>
+        <developerConnection/>
+        <tag/>
+        <url/>
+    </scm>
+    <properties>
+        <java.version>17</java.version>
+        <eclipselink.version>4.0.7</eclipselink.version>
+        <jakarta.bind.version>4.0.2</jakarta.bind.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Dynamic JAXB (MOXy) -->
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>${jakarta.bind.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>org.eclipse.persistence.moxy</artifactId>
+            <version>${eclipselink.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-xjc</artifactId>
+            <version>4.0.2</version> <!-- match your jakarta.xml.bind version -->
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.16.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>xsom</artifactId>
+            <version>4.0.4</version>
+        </dependency>
+
+
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.eclipse.xsd/org.eclipse.xsd &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.eclipse.xsd</groupId>-->
+        <!--            <artifactId>org.eclipse.xsd</artifactId>-->
+        <!--            <version>2.12.0</version>-->
+        <!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.eclipse.emf/org.eclipse.xsd -->
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.xsd</artifactId>
+            <version>2.21.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.eclipse.emf/org.eclipse.emf.ecore -->
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.emf.ecore</artifactId>
+            <version>2.40.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.eclipse.emf/org.eclipse.emf.ecore.xmi -->
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.emf.ecore.xmi</artifactId>
+            <version>2.39.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.eclipse.emf/org.eclipse.emf.common -->
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.emf.common</artifactId>
+            <version>2.40.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.xmlet</groupId>
+            <artifactId>xsdParser</artifactId>
+            <version>1.2.20</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.ws.xmlschema/xmlschema -->
+        <dependency>
+            <groupId>org.apache.ws.xmlschema</groupId>
+            <artifactId>xmlschema</artifactId>
+            <version>2.3.1</version>
+            <type>pom</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.xmlbeans</groupId>
+            <artifactId>xmlbeans</artifactId>
+            <version>5.3.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.sf.saxon/Saxon-HE -->
+        <dependency>
+            <groupId>net.sf.saxon</groupId>
+            <artifactId>Saxon-HE</artifactId>
+            <version>12.9</version>
+        </dependency>
+
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.xmlbeans</groupId>
+                <artifactId>xmlbeans</artifactId>
+                <version>5.3.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <extensions>
+                        <extension>
+                            <className>org.apache.xmlbeans.impl.tool.SchemaCompilerExtension</className>
+                            <params>
+                                <param>
+                                    <name>sourceSchemas</name>
+                                    <value>
+                                        ${project.basedir}/src/main/resources/schemas/ato.as.0004.2025.submit.01.00.xsd
+                                    </value>
+                                </param>
+                            </params>
+                        </extension>
+                    </extensions> <!-- Path to your schema files -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

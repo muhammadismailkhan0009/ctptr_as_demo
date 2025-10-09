@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ASCII"?>
+<assubmitrequest:ASSubmitRequest xmlns:assubmitrequest="http://www.sbr.gov.au/ato/assubmitrequest">
+  <assubmitrequest:RP>
+    <assubmitrequest:AustralianBusinessNumberId>12345678901</assubmitrequest:AustralianBusinessNumberId>
+    <assubmitrequest:TaxFileNumberId>123456789</assubmitrequest:TaxFileNumberId>
+    <assubmitrequest:PartyEntityNameT>name</assubmitrequest:PartyEntityNameT>
+    <assubmitrequest:BusinessDocumentGovernmentGeneratedId>123456789</assubmitrequest:BusinessDocumentGovernmentGeneratedId>
+    <assubmitrequest:TypeC>A</assubmitrequest:TypeC>
+    <assubmitrequest:StatementRevisionI>false</assubmitrequest:StatementRevisionI>
+  </assubmitrequest:RP>
+  <assubmitrequest:INT>
+    <assubmitrequest:AustralianBusinessNumberId>12345678911</assubmitrequest:AustralianBusinessNumberId>
+    <assubmitrequest:Declaration>
+      <assubmitrequest:StatementAcceptedI>false</assubmitrequest:StatementAcceptedI>
+      <assubmitrequest:SignatoryIdentifierT>false</assubmitrequest:SignatoryIdentifierT>
+    </assubmitrequest:Declaration>
+  </assubmitrequest:INT>
+</assubmitrequest:ASSubmitRequest>

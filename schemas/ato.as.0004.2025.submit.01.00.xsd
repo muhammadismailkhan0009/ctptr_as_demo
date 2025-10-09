@@ -1,0 +1,1084 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.sbr.gov.au/ato/assubmitrequest" elementFormDefault="qualified" targetNamespace="http://www.sbr.gov.au/ato/assubmitrequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="ASSubmitRequest" type="tns:ASSubmitRequest" />
+	<xs:complexType name="ASSubmitRequest">
+		<xs:annotation>
+			<xs:documentation>This schema was generated from a template.</xs:documentation>
+			<xs:documentation>Manual changes to this file will be overwritten if the schema is regenerated.</xs:documentation>
+			<xs:documentation>Generated on 2024-10-29T14:26:11, by ESR Version 3.0.31.0 using ESR Database SWS_EA_ESR_Cloud_Prod</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="1" name="RP" type="tns:RP">
+				<xs:annotation>
+					<xs:documentation>RP</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="INT" type="tns:INT">
+				<xs:annotation>
+					<xs:documentation>INT</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GSTBusinessVariation">
+		<xs:annotation>
+			<xs:documentation>GST Business Variation</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="1" name="GoodsAndServicesTaxLiabilityA">
+				<xs:annotation>
+					<xs:documentation>G23 - Varied GST amount for the quarter</xs:documentation>
+					<xs:documentation>Alias: AS71</xs:documentation>
+					<xs:documentation>Report Guidance: G23 - Varied GST amount for the quarter: This is the varied GST instalment amount for the quarter.</xs:documentation>
+					<xs:documentation>Business Definition: Generally a tax of 10% on the supply of most goods and services and other taxable supplies (for example, real property and rights) in Australia, including things that are imported. In most cases it does not apply to exports of goods or services, and other things consumed outside Australia. It is similar to 'value-added taxes' applying in other countries. The GST is a multi-stage tax, that is, GST is paid at each stage of the supply chain. Liability for this tax rests on the supplier. Usually the supplier adjusts the price of a taxable supply to reflect the GST payable on the supply. However, if the supplier does not adjust the price to reflect the GST, it is still liable to pay the GST to the Tax Office. GST replaced the wholesale sales tax and the excise surcharge payable on petroleum and tobacco products which the Australian Government collected and reimbursed to the states and territories under agreed repayment schemes.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="1" maxOccurs="1" name="GoodsAndServicesTaxLiabilityVariationReasonC">
+				<xs:annotation>
+					<xs:documentation>G24 - Reason code for GST variation</xs:documentation>
+					<xs:documentation>Alias: AS70</xs:documentation>
+					<xs:documentation>Report Guidance: G24 - Reason code for GST variation: Enter a valid reason code for that the client has chosen to vary the GST instalment.
+Valid reason codes are:
+22 = Current business structure not continuing
+23 = Significant change in trading conditions
+24 = Internal business restructure
+25 = Change in legislation or product mix
+26 = Financial market changes</xs:documentation>
+					<xs:documentation>Business Definition: Provides the reason that the client has chosen to vary the GST instalment.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="22" />
+						<xs:enumeration value="23" />
+						<xs:enumeration value="24" />
+						<xs:enumeration value="25" />
+						<xs:enumeration value="26" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GST">
+		<xs:annotation>
+			<xs:documentation>GST</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="1" name="GoodsAndServicesTaxReportingMethodC">
+				<xs:annotation>
+					<xs:documentation>GST elected reporting option</xs:documentation>
+					<xs:documentation>Alias: AS65</xs:documentation>
+					<xs:documentation>Report Guidance: GST elected reporting option: Enter a valid code to indicate the method used to report goods and services tax (GST).
+Valid values are:
+Full = Full Reporting
+Simple = Simpler BAS
+Instalment = Instalment
+
+Simpler BAS was introduced on the 1st of July 2017 and is the standard GST reporting method for small businesses. The GST Instalment reporting method is also available to eligible small businesses (subject to the instalment eligibility criteria) who wish to opt out of Simpler BAS.
+
+From 2016/17 and beyond, all existing streamlined clients will no longer be required to lodge the GST Annual Information Report (GAIR).
+
+Refer to 'GST reporting methods' on the ato.gov.au website for more information.</xs:documentation>
+					<xs:documentation>Business Definition: A code which identifies the method used to report goods and services tax (GST).</xs:documentation>
+					<xs:documentation>Business Guidance: Valid values are:
+None = None
+Full = Full Reporting
+Simple = Simpler BAS
+Instalment = Instalment</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Full" />
+						<xs:enumeration value="Instalment" />
+						<xs:enumeration value="Simple" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="IncomeSaleOfGoodsAndServicesWholeA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>G1 - Total sales</xs:documentation>
+					<xs:documentation>Alias: AS69</xs:documentation>
+					<xs:documentation>Report Guidance: G1 - Total sales: Enter the total Sales amount for the period against which the GST payable is calculated. Total Sales amount includes sales of goods and services in the course of the client's business or enterprise, sales of business assets and sale or lease of property if the client's business or enterprise is dealing with property (eg sell, lease or develop property).</xs:documentation>
+					<xs:documentation>Business Definition: This represents the total sales amount for the period against which the GST payable is calculated.</xs:documentation>
+					<xs:documentation>Business Guidance: If you use the calculation sheet method, this figure less any GST free or input tax sales divided by 11 will be the clients GST liability.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="IncomeSaleOfGoodsAndServicesTaxIncludedI" nillable="true">
+				<xs:annotation>
+					<xs:documentation>GST included in total sales indicator (G1 includes GST)</xs:documentation>
+					<xs:documentation>Alias: AS74</xs:documentation>
+					<xs:documentation>Report Guidance: GST included in total sales indicator: Set the field to TRUE if GST is included in the total sales amount. Set the field to FALSE if GST is not included in the total sales amount.</xs:documentation>
+					<xs:documentation>Business Definition: This indicates whether the total sales figure includes GST or not.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:boolean" />
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="GoodsAndServicesTaxExportSalesA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>G2 - Export sales amount</xs:documentation>
+					<xs:documentation>Alias: AS58</xs:documentation>
+					<xs:documentation>Report Guidance: G2 - Export sales amount: Enter total sales amount for goods and services exported from Australia which are GST free.</xs:documentation>
+					<xs:documentation>Business Definition: These are sales included in the total sales amount which are GST free. Items defined in subdivision 38E of the GST Act and are for consumption outside Australia and hence are GST Free.</xs:documentation>
+					<xs:documentation>Business Guidance: Goods to be exported</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="GoodsAndServicesTaxExemptSalesA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>G3 - Other GST-free sales</xs:documentation>
+					<xs:documentation>Alias: AS64</xs:documentation>
+					<xs:documentation>Business Definition: These are sales included in the total sales amount which are GST free but are not export sales. GST -free has the meaning given by 9-3(1) and Division 38. That is a GST free supply or a right to receive a supply that would be GST free as determined by Division 38. Broadly Food, Health, Education, Child care, Exports, Religious services, charitable activities, sewerage, going concerns, transport, precious metals, duty free, land grants, farm land and cars for disabled people.</xs:documentation>
+					<xs:documentation>Business Guidance: Any supplies other than exports for which you have not charged GST.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="ExpenseCapitalA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>G10 - Capital purchases</xs:documentation>
+					<xs:documentation>Alias: AS56</xs:documentation>
+					<xs:documentation>Business Definition: No legal definition exits for capital purchases.  Represents the total amount that the client spent on capital purchases for the period. Creditable acquisition-You acquire anything for a creditable purpose, the supply of the thing to you is a taxable supply and you are registered or required to be registered.</xs:documentation>
+					<xs:documentation>Business Guidance: Capital is any asset with an effective life greater than 12 months and a cost exceeding $1. As many clients are part of the simplified tax system this is generally purchases which are not consumable and cost more than $1,.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="ExpenseNonCapitalA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>G11 - Non-capital Purchases</xs:documentation>
+					<xs:documentation>Alias: AS63</xs:documentation>
+					<xs:documentation>Business Definition: Represents the total amount that the client spent on non capital purchases for the period. Creditable acquisition-You acquire anything for a creditable purpose, the supply of the thing to you is a taxable supply and you are registered or required to be registered.</xs:documentation>
+					<xs:documentation>Business Guidance: This is any item which is not an item of capital and includes trading stock and consumables.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="GSTCommissionerCalculatedGoodsAndServicesTaxLiabilityA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>G21 - ATO instalment amount</xs:documentation>
+					<xs:documentation>Alias: AS55</xs:documentation>
+					<xs:documentation>Report Guidance: G21 - ATO instalment amount: This is GST instalment amount calculated by the Tax Office. This is calculated based on GST information from last annual GST return, or net GST amounts have been previously reported.</xs:documentation>
+					<xs:documentation>Business Definition: Generally a tax of 10% on the supply of most goods and services and other taxable supplies (for example, real property and rights) in Australia, including things that are imported. In most cases it does not apply to exports of goods or services, and other things consumed outside Australia. It is similar to 'value-added taxes' applying in other countries. The GST is a multi-stage tax, that is, GST is paid at each stage of the supply chain. Liability for this tax rests on the supplier. Usually the supplier adjusts the price of a taxable supply to reflect the GST payable on the supply. However, if the supplier does not adjust the price to reflect the GST, it is still liable to pay the GST to the Tax Office. GST replaced the wholesale sales tax and the excise surcharge payable on petroleum and tobacco products which the Australian Government collected and reimbursed to the states and territories under agreed repayment schemes.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="GSTBusinessEstimationGoodsAndServicesTaxLiabilityA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>G22 - Estimated net GST for the year</xs:documentation>
+					<xs:documentation>Alias: AS57</xs:documentation>
+					<xs:documentation>Report Guidance: G22 - Estimated net GST for the year: This is the net annual GST liability amount estimated by the entity.</xs:documentation>
+					<xs:documentation>Business Definition: Generally a tax of 10% on the supply of most goods and services and other taxable supplies (for example, real property and rights) in Australia, including things that are imported. In most cases it does not apply to exports of goods or services, and other things consumed outside Australia. It is similar to 'value-added taxes' applying in other countries. The GST is a multi-stage tax, that is, GST is paid at each stage of the supply chain. Liability for this tax rests on the supplier. Usually the supplier adjusts the price of a taxable supply to reflect the GST payable on the supply. However, if the supplier does not adjust the price to reflect the GST, it is still liable to pay the GST to the Tax Office. GST replaced the wholesale sales tax and the excise surcharge payable on petroleum and tobacco products which the Australian Government collected and reimbursed to the states and territories under agreed repayment schemes.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="GSTBusinessVariation" type="tns:GSTBusinessVariation">
+				<xs:annotation>
+					<xs:documentation>GST Business Variation</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FBTBusinessVariation">
+		<xs:annotation>
+			<xs:documentation>FBT Business Variation</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="1" name="FringeBenefitsTaxLiabilityA">
+				<xs:annotation>
+					<xs:documentation>F3 - Varied FBT amount for the quarter</xs:documentation>
+					<xs:documentation>Alias: AS47</xs:documentation>
+					<xs:documentation>Report Guidance: F3 - Varied FBT amount for the quarter: This is the varied FBT instalment amount for the quarter .</xs:documentation>
+					<xs:documentation>Business Definition: The tax payable by employers on the taxable value of the fringe benefits they provide to employees (or associates of employees).</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="1" maxOccurs="1" name="FringeBenefitsTaxLiabilityVariationReasonC">
+				<xs:annotation>
+					<xs:documentation>F4 - Reason code for FBT variation</xs:documentation>
+					<xs:documentation>Alias: AS46</xs:documentation>
+					<xs:documentation>Report Guidance: F4 - Reason code for FBT variation: This is a code indicating the reason that the client is changing their FBT instalment rate.
+Valid codes are:
+22 = Current business structure not continuing;
+30 = Change in fringe benefits to employees;
+31 = Change in employees with fringe benefits;
+32 = Fringe benefits rebate now claimed.</xs:documentation>
+					<xs:documentation>Business Definition: It is a single code to explain the reason that the client is changing their FBT instalment rate.</xs:documentation>
+					<xs:documentation>Business Guidance: 22 = Current business structure not continuing;
+30 = Change in fringe benefits to employees;
+31 = Change in employees with fringe benefits;
+32 = Fringe benefits rebate now claimed.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="22" />
+						<xs:enumeration value="30" />
+						<xs:enumeration value="31" />
+						<xs:enumeration value="32" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FBT">
+		<xs:annotation>
+			<xs:documentation>FBT</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="1" name="FBTCommissionerCalculatedFringeBenefitsTaxLiabilityA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>F1 - Tax Office FBT instalment amount</xs:documentation>
+					<xs:documentation>Alias: AS42</xs:documentation>
+					<xs:documentation>Report Guidance: F1 - Tax Office FBT instalment amount: This is the FBT instalment amount calculated by the Tax Office, based on the FBT payable on the most recent FBT assessment.</xs:documentation>
+					<xs:documentation>Business Definition: The tax payable by employers on the taxable value of the fringe benefits they provide to employees (or associates of employees).</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="FBTBusinessEstimationFringeBenefitsTaxLiabilityA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>F2 - Estimated FBT for the year</xs:documentation>
+					<xs:documentation>Alias: AS43</xs:documentation>
+					<xs:documentation>Report Guidance: F2 - Estimated FBT for the year: This is the estimated total FBT liability for the FBT year ending 31 March, reported by the entity.</xs:documentation>
+					<xs:documentation>Business Definition: The tax payable by employers on the taxable value of the fringe benefits they provide to employees (or associates of employees).</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="FBTBusinessVariation" type="tns:FBTBusinessVariation">
+				<xs:annotation>
+					<xs:documentation>FBT Business Variation</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PAYGW">
+		<xs:annotation>
+			<xs:documentation>PAYGW</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="1" name="RemunerationWagesAndSalariesPlusPaymentsOtherA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>W1 - Total of salary, wages and other payments</xs:documentation>
+					<xs:documentation>Alias: AS96</xs:documentation>
+					<xs:documentation>Business Definition: This is where a client reports the total of salary, wages and other payments made to their employees during the reporting period. The total amount that the client has paid where a percentage would be required to be withheld under divisions 12, 13 and 14 of Schedule 1 to the TAA.</xs:documentation>
+					<xs:documentation>Business Guidance: Total gross payments subject to withholding.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="PAYGTaxWithheldSalaryWagesIncomeTaxPayAsYouGoWithholdingA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>W2 - Amount withheld from salary, wages and other payments</xs:documentation>
+					<xs:documentation>Alias: AS94</xs:documentation>
+					<xs:documentation>Report Guidance: W2 - This is the PAYG Withheld amount in relation to salary, wages and other payments.</xs:documentation>
+					<xs:documentation>Business Definition: This is the value, during the relevant period, for the amount withheld under the Pay As You Go (PAYG) arrangement.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="PAYGTaxWithheldOtherIncomeTaxPayAsYouGoWithholdingA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>W3 - Other amounts withheld</xs:documentation>
+					<xs:documentation>Alias: AS95</xs:documentation>
+					<xs:documentation>Report Guidance: W3 - This is the other PAYG amounts withheld</xs:documentation>
+					<xs:documentation>Business Definition: This is the value, during the relevant period, for the amount withheld under the Pay As You Go (PAYG) arrangement.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="PAYGTaxWithheldNoABNIncomeTaxPayAsYouGoWithholdingA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>W4 - Amount withheld where no ABN is quoted</xs:documentation>
+					<xs:documentation>Alias: AS93</xs:documentation>
+					<xs:documentation>Report Guidance: W4 -This is the PAYG withheld amount where an ABN is not quoted</xs:documentation>
+					<xs:documentation>Business Definition: This is the value, during the relevant period, for the amount withheld under the Pay As You Go (PAYG) arrangement.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PAYGI">
+		<xs:annotation>
+			<xs:documentation>PAYGI</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="1" name="IncomeTaxSelectedReportingOptionC">
+				<xs:annotation>
+					<xs:documentation>PAYG income tax instalment elected reporting option</xs:documentation>
+					<xs:documentation>Alias: AS84</xs:documentation>
+					<xs:documentation>Report Guidance: PAYG income tax instalment elected reporting option: Enter a valid code to indicate the method used to PAYG instalment.
+Valid codes are:
+1 = Instalment Amount
+2 = Instalment Rate</xs:documentation>
+					<xs:documentation>Business Definition: This is for income tax instalments where the client has the option to pay an instalment amount based on previous year's income tax liabilities.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="1" />
+						<xs:enumeration value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="IncomeTaxInstalmentIncomeA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>T1 - PAYG instalment income</xs:documentation>
+					<xs:documentation>Alias: AS83</xs:documentation>
+					<xs:documentation>Business Definition: All ordinary income a taxpayer earned from their business or investment activities for the period (usually quarter) excluding GST.</xs:documentation>
+					<xs:documentation>Business Guidance: Include in the instalment income amounts such as: - goods or services that they sell or supply 
+- interest received or credited to their bank account 
+- gross rent 
+- dividends paid or re-invested on the taxpayer's behalf (do not include imputation credits) 
+- royalties 
+- gross amount of income where tax has been withheld because they did not provide your tax file number or Australian business number 
+- foreign pensions that are assessable in Australia 
+- the taxpayer's proportion of any partnership income 
+- the taxpayer's proportion of any trust income, and 
+- withdrawals from farm management deposits.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="IncomeTaxLiabilityVariationReasonC" nillable="true">
+				<xs:annotation>
+					<xs:documentation>T4 - Reason code for PAYG income tax instalment variation</xs:documentation>
+					<xs:documentation>Alias: AS88</xs:documentation>
+					<xs:documentation>Report Guidance: T4 - Reason code for PAYG income tax instalment variation: This code indicates the reason for varying the PAYG income tax instalment amount.
+Valid codes are:
+21 = Change in investments
+22 = Current business structure not continuing
+23 = Significant change in trading conditions
+24 = Internal business restructure
+25 = Change in legislation or product mix
+26 = Financial market changes
+27 = Use of income tax losses
+33 = Consolidations</xs:documentation>
+					<xs:documentation>Business Definition: A code indicating the reason the client has made a variation to the Tax Office provided instalment amount.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="21" />
+						<xs:enumeration value="22" />
+						<xs:enumeration value="23" />
+						<xs:enumeration value="24" />
+						<xs:enumeration value="25" />
+						<xs:enumeration value="26" />
+						<xs:enumeration value="27" />
+						<xs:enumeration value="33" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="CommissionerCalculatedIncomeTaxLiabilityA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>T5/ T7 - Tax Office PAYG income tax instalment amount</xs:documentation>
+					<xs:documentation>Alias: AS78</xs:documentation>
+					<xs:documentation>Report Guidance: T5/ T7 - Tax Office PAYG income tax instalment amount: This is instalment amount calculated by the Tax Office.</xs:documentation>
+					<xs:documentation>Business Definition: Tax liability on business and investment income for a given income year</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="BusinessEstimationIncomeTaxLiabilityA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>T8 - Estimated PAYG income tax for the year</xs:documentation>
+					<xs:documentation>Alias: AS82</xs:documentation>
+					<xs:documentation>Report Guidance: T8 - Estimated PAYG income tax for the year: Enter the estimated tax liability on business and investment income for the reporting year.</xs:documentation>
+					<xs:documentation>Business Definition: Tax liability on business and investment income for a given income year</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="BusinessVariationIncomeTaxLiabilityA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>T6/T9 - Varied PAYG income tax instalment amount</xs:documentation>
+					<xs:documentation>Alias: AS89</xs:documentation>
+					<xs:documentation>Report Guidance: T6/T9 - Varied PAYG income tax instalment amount - This is the varied instalment amount.</xs:documentation>
+					<xs:documentation>Business Definition: Tax liability on business and investment income for a given income year</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="PAYGInstalmentCommissionerCalculatedTaxRateDesignationR" nillable="true">
+				<xs:annotation>
+					<xs:documentation>T2 - Commissioner Calculated - Instalment rate</xs:documentation>
+					<xs:documentation>Alias: AS75</xs:documentation>
+					<xs:documentation>Report Guidance: Commissioner Calculated - T2 - Instalment rate: This is instalment rate set by the Tax Office.</xs:documentation>
+					<xs:documentation>Business Definition: The decimal number that represents the Tax Rate to be applied.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="PAYGInstalmentBusinessVariationTaxRateDesignationR" nillable="true">
+				<xs:annotation>
+					<xs:documentation>T3 - Business Variation - New varied rate</xs:documentation>
+					<xs:documentation>Alias: AS90</xs:documentation>
+					<xs:documentation>Report Guidance: Business Variation - T3 - New varied rate: This is the varied instalment rate.</xs:documentation>
+					<xs:documentation>Business Definition: The decimal number that represents the Tax Rate to be applied.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AmountsyouowetheATO">
+		<xs:annotation>
+			<xs:documentation>Amounts you owe the ATO</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="1" name="GoodsAndServicesTaxPayableA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>1A - GST on sales or GST instalment</xs:documentation>
+					<xs:documentation>Alias: AS104</xs:documentation>
+					<xs:documentation>Report Guidance: 1A - This is the total GST payable on sales that attract a GST component for the relevant period</xs:documentation>
+					<xs:documentation>Business Definition: Total GST payable on all sales that attract a GST component for the relevant period.</xs:documentation>
+					<xs:documentation>Business Guidance: Summary of the GST liability according to division 9.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="WineEqualisationTaxLiabilityA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>1C - Wine equalisation tax</xs:documentation>
+					<xs:documentation>Alias: AS72</xs:documentation>
+					<xs:documentation>Report Guidance: 1C - This is the wine equalisation tax collected from their sales to their customers and payable to the Tax Office</xs:documentation>
+					<xs:documentation>Business Definition: This is where a client reports their wine equalisation tax collected from their sales to their customers and payable to the Tax Office.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="LuxuryCarTaxLiabilityA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>1E - Luxury car tax</xs:documentation>
+					<xs:documentation>Alias: AS61</xs:documentation>
+					<xs:documentation>Report Guidance: 1E - This is the luxury car tax collected from their sales to their customers and payable to the Tax Office.</xs:documentation>
+					<xs:documentation>Business Definition: This is where a client reports their luxury car tax collected from their sales to their
+customers and payable to the Tax Office.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="IncomeTaxPayAsYouGoWithholdingTotalA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>4/ W5 - PAYG tax withheld (W2+W3+W4)</xs:documentation>
+					<xs:documentation>Alias: AS97</xs:documentation>
+					<xs:documentation>Report Guidance: PAYG tax withheld: This is the total amount that is withheld 
+for PAYG tax purpose.</xs:documentation>
+					<xs:documentation>Business Definition: The total amount that the payer is required to withhold under Divisions 12, 13 and 14 of Schedule 1 to the Tax Administration Act.</xs:documentation>
+					<xs:documentation>Business Guidance: Total liability for PAYG withholding.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="IncomeTaxInstalmentPayableA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>5A - PAYG Income tax instalment</xs:documentation>
+					<xs:documentation>Alias: AS106</xs:documentation>
+					<xs:documentation>Business Definition: This is where the client reports their income tax instalment debit amount for the reporting period.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="FringeBenefitsTaxPayableA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>6A - FBT instalment</xs:documentation>
+					<xs:documentation>Alias: AS101</xs:documentation>
+					<xs:documentation>Report Guidance: 6A - FBT instalment: This is the FBT instalment amount which is the FBT instalment amount displayed at F1 or the varied FBT instalment amount for the quarter reported at F3</xs:documentation>
+					<xs:documentation>Business Definition: The tax payable by employers on the taxable value of the fringe benefits they provide to employees (or associates of employees).</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="IncomeTaxCompanyAndSuperannuationFundDeferredLiabilityInstalmentA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>7 - Deferred company/fund instalment</xs:documentation>
+					<xs:documentation>Alias: AS39</xs:documentation>
+					<xs:documentation>Business Definition: Deferred Company/Fund Instalment (DCI) is a special transitional arrangement created to support the introduction of Pay As You Go (PAYG) Income Tax Instalments (ITI).</xs:documentation>
+					<xs:documentation>Business Guidance: This is the amount of company income tax which was due when the new tax system was introduced. These clients were given an extended period of time to pay this amount.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="GoodsAndServicesTaxDeferredLiabilityOnImportDutyA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>7A - Deferred GST on imported goods</xs:documentation>
+					<xs:documentation>Alias: AS40</xs:documentation>
+					<xs:documentation>Business Definition: Deferred GST is an amount provided to the Tax Office by Australian Customs Service for duty payable by the client in the previous month for imports.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="FuelTaxOverclaimedCreditsA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>7C - Fuel tax credit over claim</xs:documentation>
+					<xs:documentation>Alias: AS59</xs:documentation>
+					<xs:documentation>Business Definition: This is where a client reports their fuel tax credits over-claimed to the Tax Office. This is the amount that clients have claimed on an early claim form or have been previously overpaid.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AmountstheATOowesyou">
+		<xs:annotation>
+			<xs:documentation>Amounts the ATO owes you</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="1" name="GoodsAndServicesTaxClaimableCreditsA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>1B - GST on purchases</xs:documentation>
+					<xs:documentation>Alias: AS105</xs:documentation>
+					<xs:documentation>Report Guidance: 1B - This is the GST paid on all business related purchases that were used to generate sales</xs:documentation>
+					<xs:documentation>Business Definition: The GST paid on all business related purchases that were used to generate sales.</xs:documentation>
+					<xs:documentation>Business Guidance: The summary of input tax credits</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="WineEqualisationTaxClaimableCreditsA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>1D - Wine equalisation tax refundable</xs:documentation>
+					<xs:documentation>Alias: AS73</xs:documentation>
+					<xs:documentation>Report Guidance: 1D - This is the credit for wine equalisation tax paid on their purchase. Sum of credits and WET refunds resulting where WET has been paid more than once on the same supply</xs:documentation>
+					<xs:documentation>Business Definition: This is where the client claims a credit for wine equalisation tax paid on their purchases. Sum of credits and WET refunds resulting where WET has been paid more than once on the same supply.</xs:documentation>
+					<xs:documentation>Business Guidance: Applies where WET has been paid more than once on the same supply or when the circumstances described in section 17-5 of the WET Act are applicable.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="LuxuryCarTaxClaimableCreditsA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>1F - Luxury car tax refundable</xs:documentation>
+					<xs:documentation>Alias: AS62</xs:documentation>
+					<xs:documentation>Business Definition: This is where the client claims a credit for luxury car tax paid on their purchases. Decreasing luxury car tax adjustments</xs:documentation>
+					<xs:documentation>Business Guidance: This is an amount of Luxury car tax which has been overpaid.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="GoodsAndServicesTaxLiabilityInstalmentsTotalA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>1H - GST instalments (amounts reported at G21 or G23 in your activity statement(s) for the reporting period)</xs:documentation>
+					<xs:documentation>Alias: AS103</xs:documentation>
+					<xs:documentation>Business Definition: This is the sum of all amounts of GST instalments paid by the client who elected to pay by instalment and is now reporting this amount on their annual GST return.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="IncomeTaxInstalmentClaimableCreditsA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>5B - Credit from PAYG income tax instalment variation</xs:documentation>
+					<xs:documentation>Alias: AS107</xs:documentation>
+					<xs:documentation>Business Definition: This is where the client is able to claim a credit for overpayment instalments of previous quarters as a result of reduced varied instalment amounts.</xs:documentation>
+					<xs:documentation>Business Guidance: Where the client varies their income tax instalment the liability for the year may be less than the amount which has already been paid which gives rise to a PAYGI credit.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="FringeBenefitsTaxClaimableCreditsA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>6B - Credit from FBT instalment variation</xs:documentation>
+					<xs:documentation>Alias: AS102</xs:documentation>
+					<xs:documentation>Report Guidance: 6B - Credit from FBT instalment variation: This is the FBT instalment credit amount which is available only if the estimated FBT for the year is varied to an amount lower than the FBT liable to pay last year.</xs:documentation>
+					<xs:documentation>Business Definition: The client is entitled to claim a credit for any over payment of instalments paid in previous quarters when they varied an Tax Office provided instalment to a lesser amount.</xs:documentation>
+					<xs:documentation>Business Guidance: Where the client varies their fringe benefit tax instalment the liability for the year may be less than the amount which has already been paid which gives rise to an FBTI credit.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="FuelTaxClaimableCreditsA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>7D - Fuel tax credit</xs:documentation>
+					<xs:documentation>Alias: AS60</xs:documentation>
+					<xs:documentation>Business Definition: This is where a client claims a credit for fuel tax credits on their fuel purchases. Credit amounts that you are entitled to under section 41-5 or 41-1 of the Fuel Tax Act 26 or under the Energy Grants (Credits) Scheme Act 23.</xs:documentation>
+					<xs:documentation>Business Guidance: Section 12A of the FTCA requires that clients put an increasing adjustment in their BAS for the amount of fuel credit which has already been claimed. If a corresponding credit entitlement was not reported they would be in debit.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Summary">
+		<xs:annotation>
+			<xs:documentation>Summary</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="1" name="AmountsyouowetheATO" type="tns:AmountsyouowetheATO">
+				<xs:annotation>
+					<xs:documentation>Amounts you owe the ATO</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="AmountstheATOowesyou" type="tns:AmountstheATOowesyou">
+				<xs:annotation>
+					<xs:documentation>Amounts the ATO owes you</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="StatementPayableA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>8A/ 2A/ P1 - Amount you owe the Tax Office</xs:documentation>
+					<xs:documentation>Alias: AS50</xs:documentation>
+					<xs:documentation>Report Guidance: 8A/ 2A/ P1 - Amount you owe the Tax Office: This is the total amount payable to the Tax Office.</xs:documentation>
+					<xs:documentation>Business Definition: A subtotal of all debit amounts on the activity statement.</xs:documentation>
+					<xs:documentation>Business Guidance: 1A + 1C + 1E + 4 + 5A + 6A + 7 + 7A + 7C</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="StatementRefundableA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>8B/ 2B - Amount the Tax Office owes you</xs:documentation>
+					<xs:documentation>Alias: AS51</xs:documentation>
+					<xs:documentation>Report Guidance: 8B/ 2B - Amount the Tax Office owes you: This is the total amount refundable.</xs:documentation>
+					<xs:documentation>Business Definition: A subtotal of all credit amounts on the activity
+statement.</xs:documentation>
+					<xs:documentation>Business Guidance: 1B + 1D + 1F + 5B + 6B + 7D</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:minInclusive value="0" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="StatementNetA" nillable="true">
+				<xs:annotation>
+					<xs:documentation>9 - Your payment or refund amount</xs:documentation>
+					<xs:documentation>Alias: AS49</xs:documentation>
+					<xs:documentation>Report Guidance: 9 - Your payment or refund amount: This is the total net amount calculated by 8A/ 2A/ P1 - Amount you owe the Tax Office minus 8B/ 2B - Amount the Tax Office owes you.</xs:documentation>
+					<xs:documentation>Business Definition: Net total of all debits and credits on the activity statement. It can either be net payable to the Tax Office or net refundable
+to the client.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Declaration">
+		<xs:annotation>
+			<xs:documentation>Declaration</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="1" name="StatementAcceptedI">
+				<xs:annotation>
+					<xs:documentation>Declaration Statement Accepted Indicator</xs:documentation>
+					<xs:documentation>Alias: AS181</xs:documentation>
+					<xs:documentation>Report Guidance: Declaration Statement Accepted Indicator: Set the field to TRUE if the terms stated in the Declaration Text have been accepted. Set the field to FALSE if the terms stated in the Declaration Text have been declined.</xs:documentation>
+					<xs:documentation>Business Definition: Indicates that the terms stated in the Declaration Text have been accepted or declined.</xs:documentation>
+					<xs:documentation>Business Guidance: A choice of TRUE/FALSE values.
+true = Indicates that the terms stated in the Declaration Text have been accepted.
+false = Indicates that the terms stated in the Declaration Text have been declined.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:boolean" />
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="1" maxOccurs="1" name="SignatoryIdentifierT">
+				<xs:annotation>
+					<xs:documentation>Declaration Signatory Identifier Text</xs:documentation>
+					<xs:documentation>Alias: AS183</xs:documentation>
+					<xs:documentation>Business Definition: Identifier defined and used by the ABR device credential holder to identify a user.  The user identifier must allow the ABR credential owner or an external auditor to uniquely identify the individual that made the declaration.</xs:documentation>
+					<xs:documentation>Business Guidance: The identifier used can be specified by the ABR credential owner providing it allows identification as above.  Examples of suitable identifiers include a user login, a full name or an E-mail address.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="([0-9a-zA-Z \.,\?!\(\)\[\]:;'\-_=/@$%\*&amp;&quot;])*" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RP">
+		<xs:annotation>
+			<xs:documentation>RP</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="1" name="AustralianBusinessNumberId" nillable="true">
+				<xs:annotation>
+					<xs:documentation>Organisation: ABN</xs:documentation>
+					<xs:documentation>Alias: AS120</xs:documentation>
+					<xs:documentation>Report Guidance: Australian Business Number (ABN) : Enter the ABN of the entity.</xs:documentation>
+					<xs:documentation>Business Definition: A unique public identifier issued to all entities registered in the Australian Business Register (ABR), to be used in their dealings with government. Companies registered under the Corporations Law and business entities carrying on an enterprise in Australia are entitled to an ABN.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{11}" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="TaxFileNumberId" nillable="true">
+				<xs:annotation>
+					<xs:documentation>TFN - Tax file number</xs:documentation>
+					<xs:documentation>Alias: AS100</xs:documentation>
+					<xs:documentation>Report Guidance: Tax file number: Enter the Tax File Number (TFN) of the entity.</xs:documentation>
+					<xs:documentation>Business Definition: A unique number issued by the Tax Office to individuals and organisations to identify their tax records. It increases the efficiency in administering tax and other Australian Government systems such as income support payments. It is also used as the identifier for clients' income tax roles. A Tax File Number (TFN) can be used externally only for communication with the Tax Office, either directly by the client, or by an external organisation that is required to collect and quote the client's TFN to the Tax Office.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="8" />
+						<xs:maxLength value="9" />
+						<xs:pattern value="([0-9])*" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="PartyEntityNameT" nillable="true">
+				<xs:annotation>
+					<xs:documentation>Main Trading Name</xs:documentation>
+					<xs:documentation>Alias: AS36</xs:documentation>
+					<xs:documentation>Business Definition: The full name of the entity, where the entity can be either an individual or organisation.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="200" />
+						<xs:pattern value="([0-9a-zA-Z \.,\?!\(\)\{\}:;'\|\-_=\\/@#$%\*=&amp;&quot;])*" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="1" maxOccurs="1" name="BusinessDocumentGovernmentGeneratedId">
+				<xs:annotation>
+					<xs:documentation>DIN - Document identification number</xs:documentation>
+					<xs:documentation>Alias: AS19</xs:documentation>
+					<xs:documentation>Report Guidance: Document identification number (DIN): Enter the DIN that was generated by the government agency and used to uniquely identify the activity statement.</xs:documentation>
+					<xs:documentation>Business Definition: This is an identifier generated by the government agency, used to uniquely identify the business document contained in the exchanged message.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="9" />
+						<xs:maxLength value="11" />
+						<xs:pattern value="([0-9])*" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="TypeC" nillable="true">
+				<xs:annotation>
+					<xs:documentation>Activity statement form type</xs:documentation>
+					<xs:documentation>Alias: AS21</xs:documentation>
+					<xs:documentation>Report Guidance: Activity statement form types:
+A = BAS A – Quarterly business activity statement: GST, PAYGI, PAYGW, Deferred COIN
+B = IAS B – Instalment activity statement: PAYGI, Deferred COIN
+C = BAS C – Quarterly business activity statement: GST, PAYGI, PAYGW, FBTI, WET, LCT, Deferred COIN
+D = BAS D – Quarterly business activity statement: GST
+F = BAS F – Quarterly business activity statement: GST, PAYGW
+G = BAS G – Monthly business activity statement: GST, PAYGI, PAYGW, FBTI, WET, LCT, Deferred COIN
+I = IAS I – Instalment activity statement: PAYGW
+J = IAS J – Quarterly instalment activity statement: PAYGI, PAYGW, FBTI, Deferred COIN
+N = IAS N – Annual instalment activity statement: ​PAYGI (instalment amount)
+P = BAS P – Annual GST return: Annual GST return, WET, LCT
+R = BAS R – Quarterly PAYG instalment notice: ​Quarterly PAYG instalment notice (amount only)
+S = BAS S – Quarterly GST instalment notice: GST instalment (amount only)
+T = BAS T – Quarterly GST and PAYG instalment notice: GST and PAYG instalment amount
+U = BAS U – Quarterly business activity statement: GST, PAYGI, PAYGW, Fuel tax credit (FTC)
+V = BAS V – Quarterly business activity statement: GST, PAYGI, PAYGW, FBTI, WET, LCT, Fuel tax credit (FTC)
+W = BAS W – Quarterly business activity statement: GST, Fuel tax credit (FTC)
+X = BAS X – Quarterly business activity statement: GST, PAYGW, Fuel tax credit (FTC)
+Y = BAS Y – Monthly business activity statement: GST, PAYGI, PAYGW, FBTI, WET, LCT, Fuel tax credit
+Z = BAS Z – Annual GST return: Annual GST return, WET, LCT, Fuel tax credit (FTC)</xs:documentation>
+					<xs:documentation>Business Definition: The code that uniquely identifies each report implemented by the SBR program.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="A" />
+						<xs:enumeration value="B" />
+						<xs:enumeration value="C" />
+						<xs:enumeration value="D" />
+						<xs:enumeration value="F" />
+						<xs:enumeration value="G" />
+						<xs:enumeration value="I" />
+						<xs:enumeration value="J" />
+						<xs:enumeration value="N" />
+						<xs:enumeration value="P" />
+						<xs:enumeration value="R" />
+						<xs:enumeration value="S" />
+						<xs:enumeration value="T" />
+						<xs:enumeration value="U" />
+						<xs:enumeration value="V" />
+						<xs:enumeration value="W" />
+						<xs:enumeration value="X" />
+						<xs:enumeration value="Y" />
+						<xs:enumeration value="Z" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="1" maxOccurs="1" name="StatementRevisionI">
+				<xs:annotation>
+					<xs:documentation>Activity statement revision indicator</xs:documentation>
+					<xs:documentation>Alias: AS27</xs:documentation>
+					<xs:documentation>Report Guidance: Activity statement revision indicator: Set the field to TRUE if the Activity Statement is a revision. Set the field to FALSE if the Activity Statement is not a revision (original).</xs:documentation>
+					<xs:documentation>Business Definition: An indicator value to determine if the statement is a revision or not.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:boolean" />
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="GST" type="tns:GST">
+				<xs:annotation>
+					<xs:documentation>GST</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="FBT" type="tns:FBT">
+				<xs:annotation>
+					<xs:documentation>FBT</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="PAYGW" type="tns:PAYGW">
+				<xs:annotation>
+					<xs:documentation>PAYGW</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="PAYGI" type="tns:PAYGI">
+				<xs:annotation>
+					<xs:documentation>PAYGI</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="Summary" type="tns:Summary">
+				<xs:annotation>
+					<xs:documentation>Summary</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="Declaration" type="tns:Declaration">
+				<xs:annotation>
+					<xs:documentation>Declaration</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="INT">
+		<xs:annotation>
+			<xs:documentation>INT</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="1" name="AustralianBusinessNumberId">
+				<xs:annotation>
+					<xs:documentation>Intermediary ABN</xs:documentation>
+					<xs:documentation>Alias: AS150</xs:documentation>
+					<xs:documentation>Report Guidance: Intermediary ABN: Enter the Australian Business Number of the Intermediary.</xs:documentation>
+					<xs:documentation>Business Definition: A unique public identifier issued to all entities registered in the Australian Business Register (ABR), to be used in their dealings with government. Companies registered under the Corporations Law and business entities carrying on an enterprise in Australia are entitled to an ABN.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{11}" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="TaxAgentNumberId" nillable="true">
+				<xs:annotation>
+					<xs:documentation>Tax Practitioner Number</xs:documentation>
+					<xs:documentation>Alias: AS168</xs:documentation>
+					<xs:documentation>Report Guidance: The Tax Practitioner Number for a registered tax agent or BAS agent.</xs:documentation>
+					<xs:documentation>Business Definition: An external identifier issued by the ATO on behalf of the Tax Agent's Board.  It is used to uniquely identify an individual who has been registered by the Board as a Tax Agent.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{8}" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="Declaration" type="tns:Declaration">
+				<xs:annotation>
+					<xs:documentation>Declaration</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
