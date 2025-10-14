@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ins:xbrl xmlns:ins="http://www.xbrl.org/2003/instance" xmlns:lin="http://www.xbrl.org/2003/linkbase" xmlns:xlin="http://www.w3.org/1999/xlink" xmlns:iitr="http://www.sbr.gov.au/ato/iitr">
+  <lin:schemaRef xlin:type="simple" xlin:href="ato.iitr.0012.2025.lodge.01.00.report.xml"/>
+  <ins:context id="ctx1">
+    <ins:entity>
+      <ins:identifier scheme="http://a.com">123456789</ins:identifier>
+    </ins:entity>
+    <ins:period>
+      <ins:instant>2025-10-13+05:00</ins:instant>
+    </ins:period>
+  </ins:context>
+  <ins:unit id="unit1"/>
+  <iitr:IncomeTax.Deduction.GiftDonation.Amount contextRef="ctx1" unitRef="unit1">1</iitr:IncomeTax.Deduction.GiftDonation.Amount>
+</ins:xbrl>

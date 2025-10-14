@@ -135,6 +135,27 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>4.0.2</version>
+        </dependency>
+
+        <!-- JAXB Runtime (Eclipse Implementation) -->
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>4.0.2</version>
+        </dependency>
+
+        <!-- Activation Framework (needed for JAXB runtime) -->
+        <dependency>
+            <groupId>com.sun.activation</groupId>
+            <artifactId>jakarta.activation</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -163,7 +184,7 @@
                                 <param>
                                     <name>sourceSchemas</name>
                                     <value>
-                                        ${project.basedir}/src/main/resources/schemas/ato.as.0004.2025.submit.01.00.xsd
+                                        ${project.basedir}/src/main/schema/ato.iitr.0012.2025.lodge.01.00.report.xsd
                                     </value>
                                 </param>
                             </params>
@@ -171,6 +192,36 @@
                     </extensions> <!-- Path to your schema files -->
                 </configuration>
             </plugin>
+
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>xjc</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- Directory containing your XSD files -->
+                    <sources>
+                        <source>${project.basedir}/src/main/schema/ato.iitr.0012.2025.lodge.01.00.report.xsd</source>
+                    </sources>
+
+                    <!-- Output directory for generated Java sources -->
+                    <outputDirectory>${project.basedir}/src/main/java-gen/</outputDirectory>
+
+                    <!-- Optional: package name for generated classes -->
+                    <packageName>com.example.generated</packageName>
+
+
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 

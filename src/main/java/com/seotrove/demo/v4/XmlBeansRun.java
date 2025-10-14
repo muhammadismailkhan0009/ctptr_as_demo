@@ -1,16 +1,16 @@
 package com.seotrove.demo.v4;
 
 
+import org.xbrl.x2003.instance.XbrlDocument;
 
 public class XmlBeansRun {
 
-//    public static void main(String[] args) throws Exception {
-//        // Create the root <xbrli:xbrl>
-//        XbrlDocument doc = XbrlDocument.Factory.newInstance();
-//        XbrlDocument.Xbrl xbrl = doc.addNewXbrl();
-//
-//        // TODO: populate contexts, units, facts here
-//
-//        System.out.println(doc.xmlText());
-//    }
+    public static void main(String[] args) throws Exception {
+        var xbrl = XbrlDocument.Xbrl.Factory.newInstance();
+
+
+    }
+
+    public void validate(){}
+    public static void createXbrlDocument(){}
 }
