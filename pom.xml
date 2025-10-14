@@ -164,7 +164,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-
+<!--xml beans plugin-->
             <plugin>
                 <groupId>org.apache.xmlbeans</groupId>
                 <artifactId>xmlbeans</artifactId>
@@ -187,41 +187,19 @@
                                         ${project.basedir}/src/main/schema/ato.iitr.0012.2025.lodge.01.00.report.xsd
                                     </value>
                                 </param>
+                                <param>
+                                    <name>download</name>
+                                    <value>true</value>
+                                </param>
+                                <param>
+                                    <name>verbose</name>
+                                    <value>true</value>
+                                </param>
                             </params>
                         </extension>
                     </extensions> <!-- Path to your schema files -->
                 </configuration>
             </plugin>
-
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jaxb2-maven-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <id>xjc</id>
-                        <goals>
-                            <goal>xjc</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <!-- Directory containing your XSD files -->
-                    <sources>
-                        <source>${project.basedir}/src/main/schema/ato.iitr.0012.2025.lodge.01.00.report.xsd</source>
-                    </sources>
-
-                    <!-- Output directory for generated Java sources -->
-                    <outputDirectory>${project.basedir}/src/main/java-gen/</outputDirectory>
-
-                    <!-- Optional: package name for generated classes -->
-                    <packageName>com.example.generated</packageName>
-
-
-                </configuration>
-            </plugin>
-
         </plugins>
     </build>
 

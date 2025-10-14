@@ -1,0 +1,47 @@
+<xbrli:xbrl xsi:schemaLocation="http://xbrl.org/2006/xbrldi http://www.xbrl.org/2006/xbrldi-2006.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://www.sbr.gov.au/ato/ddctns" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <link:schemaRef xlink:type="simple" xlink:href="http://sbr.gov.au/taxonomy/sbr_au_reports/ato/ddctns/ddctns_0001/ato.ddctns.0001.2019.01.00.report.xsd"/>
+    <xbrli:context id="Context_Duration_ReportingParty">
+        <xbrli:entity>
+            <xbrli:identifier scheme="http://www.ato.gov.au/tfn">220115555</xbrli:identifier>
+            <xbrli:segment>
+                <xbrldi:explicitMember dimension="tns:ReportPartyTypeDimension">tns:ReportingParty</xbrldi:explicitMember>
+            </xbrli:segment>
+        </xbrli:entity>
+        <xbrli:period>
+            <xbrli:startDate>2024-07-01</xbrli:startDate>
+            <xbrli:endDate>2025-06-30</xbrli:endDate>
+        </xbrli:period>
+    </xbrli:context>
+
+    <xbrli:context id="Context_Duration_ReportingParty_GiftDonSeqNum_1">
+        <xbrli:entity>
+            <xbrli:identifier scheme="http://www.ato.gov.au/tfn">220115555</xbrli:identifier>
+            <xbrli:segment>
+                <xbrldi:explicitMember dimension="tns:ReportPartyTypeDimension">tns:ReportingParty</xbrldi:explicitMember>
+                <xbrldi:typedMember dimension="tns:GiftDonationSequenceDimension">
+                    <tns:GiftDonationSequenceContainer>1</tns:GiftDonationSequenceContainer>
+                </xbrldi:typedMember>
+            </xbrli:segment>
+        </xbrli:entity>
+        <xbrli:period>
+            <xbrli:startDate>2024-07-01</xbrli:startDate>
+            <xbrli:endDate>2025-06-30</xbrli:endDate>
+        </xbrli:period>
+    </xbrli:context>
+
+
+    <xbrli:unit id="u1">
+        <xbrli:measure>iso4217:AUD</xbrli:measure>
+    </xbrli:unit>
+    <xbrli:unit id="u2">
+        <xbrli:measure>xbrli:pure</xbrli:measure>
+    </xbrli:unit>
+
+    <!--Deductions-->
+    <!--Gifts or Donations-->
+    <!--DDCTNS412-->
+    <tns:IncomeTax.Deduction.GiftDonation.Description contextRef="Context_Duration_ReportingParty_GiftDonSeqNum_1">Salaryorwages workplace giving</tns:IncomeTax.Deduction.GiftDonation.Description>
+    <!--DDCTNS413-->
+    <tns:IncomeTax.Deduction.GiftDonation.Amount decimals="0" contextRef="Context_Duration_ReportingParty_GiftDonSeqNum_1" unitRef="u1">500</tns:IncomeTax.Deduction.GiftDonation.Amount>
+
+</xbrli:xbrl>
