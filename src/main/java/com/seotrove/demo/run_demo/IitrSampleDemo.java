@@ -1,7 +1,7 @@
 package com.seotrove.demo.run_demo;
 
 import com.seotrove.demo.v1.XmlValidator;
-import com.seotrove.demo.v5_current.DynamicXmlGenerator;
+import com.seotrove.demo.v5.DynamicGenerator;
 import org.w3c.dom.Document;
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -30,7 +30,7 @@ public class IitrSampleDemo {
 
 
         // --- EXECUTION ---
-        DynamicXmlGenerator generator = new DynamicXmlGenerator();
+        var generator = new DynamicGenerator();
         generator.generateXml(xsdPath, outputPath, data);
 
         System.out.println("XML generation complete. Output file: " + outputPath);
