@@ -1,9 +1,9 @@
-package com.seotrove.demo.v4;
+package com.seotrove.demo.v4_current;
 
-import com.seotrove.demo.v4.dtos.DeductionsContextData;
-import com.seotrove.demo.v4.dtos.TaxAgentInfo;
-import com.seotrove.demo.v4.dtos.TaxData;
-import com.seotrove.demo.v4.mapper.XbrlMapper;
+import com.seotrove.demo.v4_current.dtos.DeductionsContextData;
+import com.seotrove.demo.v4_current.dtos.TaxAgentInfo;
+import com.seotrove.demo.v4_current.dtos.TaxData;
+import com.seotrove.demo.v4_current.mapper.XbrlMapper;
 import org.apache.xmlbeans.XmlError;
 import org.apache.xmlbeans.XmlObject;
 import org.apache.xmlbeans.XmlOptions;
@@ -15,9 +15,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.seotrove.demo.v4.XmlBeansRun.setOptions;
+import static com.seotrove.demo.v4_current.XmlBeansRun.setOptions;
 
-public class RunNewFlow {
+public class CurrentRunNewFlow {
 
     public static void main(String[] args) throws IOException {
         var options = setOptions();

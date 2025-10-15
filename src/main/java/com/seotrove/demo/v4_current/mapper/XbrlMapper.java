@@ -1,8 +1,8 @@
-package com.seotrove.demo.v4.mapper;
+package com.seotrove.demo.v4_current.mapper;
 
 
-import com.seotrove.demo.v4.annotations.XbrlContextField;
-import com.seotrove.demo.v4.annotations.XbrlElementField;
+import com.seotrove.demo.v4_current.annotations.XbrlContextField;
+import com.seotrove.demo.v4_current.annotations.XbrlElementField;
 import org.apache.xmlbeans.XmlCursor;
 import org.apache.xmlbeans.XmlObject;
 import org.apache.xmlbeans.XmlOptions;

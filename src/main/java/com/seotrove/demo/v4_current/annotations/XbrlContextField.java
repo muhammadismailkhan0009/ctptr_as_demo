@@ -1,4 +1,4 @@
-package com.seotrove.demo.v4.annotations;
+package com.seotrove.demo.v4_current.annotations;
 
 import java.lang.annotation.*;
 

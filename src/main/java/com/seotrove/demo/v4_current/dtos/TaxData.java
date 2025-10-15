@@ -1,7 +1,7 @@
-package com.seotrove.demo.v4.dtos;
+package com.seotrove.demo.v4_current.dtos;
 
-import com.seotrove.demo.v4.annotations.XbrlContextField;
-import com.seotrove.demo.v4.contexts.IntermediaryContext;
+import com.seotrove.demo.v4_current.annotations.XbrlContextField;
+import com.seotrove.demo.v4_current.contexts.IntermediaryContext;
 import org.xbrl.x2003.instance.ContextEntityType;
 
 public record TaxData(
