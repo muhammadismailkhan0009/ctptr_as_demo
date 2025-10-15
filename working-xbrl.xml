@@ -1,0 +1,35 @@
+<ins:xbrl xmlns:ins="http://www.xbrl.org/2003/instance"
+          xmlns:iitr="http://www.sbr.gov.au/ato/iitr"
+          xmlns:xbr="http://xbrl.org/2006/xbrldi"
+>
+    <ins:context id="Context_Duration_Intermediary_TrueAndCorrect">
+        <ins:entity>
+            <ins:identifier scheme="http://www.abr.gov.au/abn">78330347529</ins:identifier>
+            <ins:segment>
+                <xbr:explicitMember dimension="iitr:DeclarationTypeDimension">iitr:TrueAndCorrect</xbr:explicitMember>
+                <xbr:explicitMember dimension="iitr:ReportPartyTypeDimension">iitr:Intermediary</xbr:explicitMember>
+            </ins:segment>
+        </ins:entity>
+        <ins:period>
+            <ins:startDate>2024-07-01</ins:startDate>
+            <ins:endDate>2025-06-30</ins:endDate>
+        </ins:period>
+    </ins:context>
+
+
+    <iitr:Identifiers.TaxAgentClientReference.Text contextRef="Context_Duration_Intermediary_TrueAndCorrect">abc</iitr:Identifiers.TaxAgentClientReference.Text>
+    <iitr:Identifiers.TaxAgentNumber.Identifier contextRef="Context_Duration_Intermediary_TrueAndCorrect">17801003</iitr:Identifiers.TaxAgentNumber.Identifier>
+
+    <ins:context id="Context_Duration_ReportingParty">
+        <ins:entity>
+            <ins:identifier scheme="http://www.ato.gov.au/tfn">220115555</ins:identifier>
+            <ins:segment>
+                <xbr:explicitMember dimension="iitr:ReportPartyTypeDimension">iitr:ReportingParty</xbr:explicitMember>
+            </ins:segment>
+        </ins:entity>
+        <ins:period>
+            <ins:startDate>2024-07-01</ins:startDate>
+            <ins:endDate>2025-06-30</ins:endDate>
+        </ins:period>
+    </ins:context>
+</ins:xbrl>

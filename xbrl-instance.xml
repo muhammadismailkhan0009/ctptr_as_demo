@@ -1,0 +1,33 @@
+<xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://www.sbr.gov.au/ato/iitr" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://xbrl.org/2006/xbrldi http://www.xbrl.org/2006/xbrldi-2006.xsd">
+    <link:schemaRef xlink:type="simple" xlink:href="http://sbr.gov.au/taxonomy/sbr_au_reports/ato/iitr/iitr_0012/ato.iitr.0012.2025.lodge.01.00.report.xsd"/>
+    <!-- Context declarations -->
+    <xbrli:context id="Context_Duration_ReportingParty">
+        <xbrli:entity>
+            <xbrli:identifier scheme="http://www.ato.gov.au/tfn">220115555</xbrli:identifier>
+            <xbrli:segment>
+                <xbrldi:explicitMember dimension="tns:ReportPartyTypeDimension">tns:ReportingParty</xbrldi:explicitMember>
+            </xbrli:segment>
+        </xbrli:entity>
+        <xbrli:period>
+            <xbrli:startDate>2024-07-01</xbrli:startDate>
+            <xbrli:endDate>2025-06-30</xbrli:endDate>
+        </xbrli:period>
+    </xbrli:context>
+    <xbrli:context id="Context_Duration_Intermediary_TrueAndCorrect">
+        <xbrli:entity>
+            <xbrli:identifier scheme="http://www.abr.gov.au/abn">78330347529</xbrli:identifier>
+            <xbrli:segment>
+                <xbrldi:explicitMember dimension="tns:DeclarationTypeDimension">tns:TrueAndCorrect</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="tns:ReportPartyTypeDimension">tns:Intermediary</xbrldi:explicitMember>
+            </xbrli:segment>
+        </xbrli:entity>
+        <xbrli:period>
+            <xbrli:startDate>2024-07-01</xbrli:startDate>
+            <xbrli:endDate>2025-06-30</xbrli:endDate>
+        </xbrli:period>
+    </xbrli:context>
+
+
+    <tns:Identifiers.TaxAgentClientReference.Text contextRef="Context_Duration_Intermediary_TrueAndCorrect">abc</tns:Identifiers.TaxAgentClientReference.Text>
+    <tns:Identifiers.TaxAgentNumber.Identifier contextRef="Context_Duration_Intermediary_TrueAndCorrect">17801003</tns:Identifiers.TaxAgentNumber.Identifier>
+</xbrli:xbrl>

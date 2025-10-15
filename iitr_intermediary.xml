@@ -1,0 +1,30 @@
+<ins:xbrl xmlns:ins="http://www.xbrl.org/2003/instance" xmlns:lin="http://www.xbrl.org/2003/linkbase" xmlns:xlin="http://www.w3.org/1999/xlink" xmlns:xbr="http://xbrl.org/2006/xbrldi" xmlns:iitr="http://www.sbr.gov.au/ato/iitr">
+  <lin:schemaRef xlin:type="simple" xlin:href="http://sbr.gov.au/taxonomy/sbr_au_reports/ato/iitr/iitr_0012/ato.iitr.0012.2025.lodge.01.00.report.xsd"/>
+  <ins:context id="INT.TrueAndCorrect">
+    <ins:entity>
+      <ins:identifier scheme="http://www.abr.gov.au/abn">78330347529</ins:identifier>
+      <ins:segment>
+        <xbr:explicitMember dimension="iitr:ReportPartyTypeDimension">iitr:Intermediary</xbr:explicitMember>
+        <xbr:explicitMember dimension="iitr:DeclarationTypeDimension">iitr:TrueAndCorrect</xbr:explicitMember>
+      </ins:segment>
+    </ins:entity>
+    <ins:period>
+      <ins:startDate>2024-07-01</ins:startDate>
+      <ins:endDate>2025-06-30</ins:endDate>
+    </ins:period>
+  </ins:context>
+  <iitr:Identifiers.TaxAgentClientReference.Text contextRef="INT.TrueAndCorrect">abc</iitr:Identifiers.TaxAgentClientReference.Text>
+  <iitr:Identifiers.TaxAgentNumber.Identifier contextRef="INT.TrueAndCorrect">17801003</iitr:Identifiers.TaxAgentNumber.Identifier>
+  <ins:context id="RP">
+    <ins:entity>
+      <ins:identifier scheme="http://www.ato.gov.au/tfn">220115555</ins:identifier>
+      <ins:segment>
+        <xbr:explicitMember dimension="iitr:ReportPartyTypeDimension">iitr:ReportingParty</xbr:explicitMember>
+      </ins:segment>
+    </ins:entity>
+    <ins:period>
+      <ins:startDate>2024-07-01</ins:startDate>
+      <ins:endDate>2025-06-30</ins:endDate>
+    </ins:period>
+  </ins:context>
+</ins:xbrl>
