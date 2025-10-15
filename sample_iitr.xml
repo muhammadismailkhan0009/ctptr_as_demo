@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ins:xbrl xmlns:ins="http://www.xbrl.org/2003/instance" xmlns:lin="http://www.xbrl.org/2003/linkbase" xmlns:xlin="http://www.w3.org/1999/xlink" xmlns:iitr="http://www.sbr.gov.au/ato/iitr">
-  <lin:schemaRef xlin:type="simple" xlin:href="a.com"/>
-  <iitr:Identifiers.AustralianBusinessNumber.Identifier contextRef="intermediary_context">11111111111</iitr:Identifiers.AustralianBusinessNumber.Identifier>
-</ins:xbrl>

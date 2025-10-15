@@ -3,7 +3,15 @@
 <!--This taxonomy was generated from a template.-->
 <!--Manual changes to will be overwritten if the taxonomy is regenerated.-->
 <!--Generated on 2025-01-08T13:26:02 by ESR Version 3.0.7.0 using ESR Database SWS_EA_ESR_Cloud_Prod-->
-<schema targetNamespace="http://www.sbr.gov.au/ato/iitr" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.sbr.gov.au/ato/iitr" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xbrli="http://www.xbrl.org/2003/instance">
+<schema targetNamespace="http://www.sbr.gov.au/ato/iitr" elementFormDefault="qualified"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://www.sbr.gov.au/ato/iitr"
+        xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:link="http://www.xbrl.org/2003/linkbase"
+        xmlns:xbrli="http://www.xbrl.org/2003/instance"
+        xmlns:xbrldi="http://xbrl.org/2006/xbrldi"
+>
   <annotation>
     <appinfo>
       <link:linkbaseRef xlink:type="simple" xlink:href="ato.iitr.0012.2025.lodge.01.00.report-presentation.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" />
@@ -3096,7 +3104,8 @@
       </link:roleType>
     </appinfo>
   </annotation>
-  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
+    <import namespace="http://xbrl.org/2006/xbrldi" schemaLocation="http://www.xbrl.org/2006/xbrldi-2006.xsd" />
+    <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
   <import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" />
   <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd" />
   <element name="IITR00122025Abstract" id="IITR00122025Abstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="false" xbrli:periodType="instant" />

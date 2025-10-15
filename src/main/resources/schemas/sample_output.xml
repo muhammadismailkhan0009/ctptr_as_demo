@@ -1,47 +1,61 @@
-<xbrli:xbrl xsi:schemaLocation="http://xbrl.org/2006/xbrldi http://www.xbrl.org/2006/xbrldi-2006.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://www.sbr.gov.au/ato/ddctns" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <link:schemaRef xlink:type="simple" xlink:href="http://sbr.gov.au/taxonomy/sbr_au_reports/ato/ddctns/ddctns_0001/ato.ddctns.0001.2019.01.00.report.xsd"/>
-    <xbrli:context id="Context_Duration_ReportingParty">
-        <xbrli:entity>
-            <xbrli:identifier scheme="http://www.ato.gov.au/tfn">220115555</xbrli:identifier>
-            <xbrli:segment>
-                <xbrldi:explicitMember dimension="tns:ReportPartyTypeDimension">tns:ReportingParty</xbrldi:explicitMember>
-            </xbrli:segment>
-        </xbrli:entity>
-        <xbrli:period>
-            <xbrli:startDate>2024-07-01</xbrli:startDate>
-            <xbrli:endDate>2025-06-30</xbrli:endDate>
-        </xbrli:period>
-    </xbrli:context>
-
-    <xbrli:context id="Context_Duration_ReportingParty_GiftDonSeqNum_1">
-        <xbrli:entity>
-            <xbrli:identifier scheme="http://www.ato.gov.au/tfn">220115555</xbrli:identifier>
-            <xbrli:segment>
-                <xbrldi:explicitMember dimension="tns:ReportPartyTypeDimension">tns:ReportingParty</xbrldi:explicitMember>
-                <xbrldi:typedMember dimension="tns:GiftDonationSequenceDimension">
-                    <tns:GiftDonationSequenceContainer>1</tns:GiftDonationSequenceContainer>
-                </xbrldi:typedMember>
-            </xbrli:segment>
-        </xbrli:entity>
-        <xbrli:period>
-            <xbrli:startDate>2024-07-01</xbrli:startDate>
-            <xbrli:endDate>2025-06-30</xbrli:endDate>
-        </xbrli:period>
-    </xbrli:context>
+<ins:xbrl xmlns:ins="http://www.xbrl.org/2003/instance"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:tns="http://www.sbr.gov.au/ato/iitr"
+          xmlns:link="http://www.xbrl.org/2003/linkbase"
+          xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
+          xmlns:xbrldi="http://xbrl.org/2006/xbrldi"
+          xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xsi:schemaLocation="http://xbrl.org/2006/xbrldi http://www.xbrl.org/2006/xbrldi-2006.xsd">
+    <link:schemaRef xlink:type="simple" xlink:href="http://sbr.gov.au/taxonomy/sbr_au_reports/ato/iitr/iitr_0011/ato.iitr.0011.2024.lodge.01.01.report.xsd"/>
+    <!-- Context declarations -->
 
 
-    <xbrli:unit id="u1">
-        <xbrli:measure>iso4217:AUD</xbrli:measure>
-    </xbrli:unit>
-    <xbrli:unit id="u2">
-        <xbrli:measure>xbrli:pure</xbrli:measure>
-    </xbrli:unit>
-
-    <!--Deductions-->
-    <!--Gifts or Donations-->
-    <!--DDCTNS412-->
-    <tns:IncomeTax.Deduction.GiftDonation.Description contextRef="Context_Duration_ReportingParty_GiftDonSeqNum_1">Salaryorwages workplace giving</tns:IncomeTax.Deduction.GiftDonation.Description>
-    <!--DDCTNS413-->
-    <tns:IncomeTax.Deduction.GiftDonation.Amount decimals="0" contextRef="Context_Duration_ReportingParty_GiftDonSeqNum_1" unitRef="u1">500</tns:IncomeTax.Deduction.GiftDonation.Amount>
-
-</xbrli:xbrl>
+    <ins:context id="Context_Duration_Intermediary_TrueAndCorrect">
+        <ins:entity>
+            <ins:identifier scheme="http://www.abr.gov.au/abn">78330347529</ins:identifier>
+            <ins:segment>
+                <xbrldi:explicitMember dimension="tns:DeclarationTypeDimension">tns:TrueAndCorrect</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="tns:ReportPartyTypeDimension">tns:Intermediary</xbrldi:explicitMember>
+            </ins:segment>
+        </ins:entity>
+        <ins:period>
+            <ins:startDate>2023-07-01</ins:startDate>
+            <ins:endDate>2024-06-30</ins:endDate>
+        </ins:period>
+    </ins:context>
+    <!-- Numeric types -->
+    <ins:unit id="u1">
+        <ins:measure>iso4217:AUD</ins:measure>
+    </ins:unit>
+    <ins:unit id="u2">
+        <ins:measure>ins:pure</ins:measure>
+    </ins:unit>
+    <!-- Lodgment Details -->
+    <!-- IITR10 -->
+    <!-- Postal Address Details -->
+    <!-- IITR33 -->
+    <!-- IITR41 -->
+    <!-- IITR48 -->
+    <!-- Reporting Party Declaration -->
+    <!-- IITR550 -->
+    <!-- IITR538 -->
+    <tns:PersonUnstructuredName.FullName.Text contextRef="Context_Duration_Intermediary_TrueAndCorrect">John Smith</tns:PersonUnstructuredName.FullName.Text>
+    <!-- IITR539 -->
+    <tns:PersonNameDetails.Position.Text contextRef="Context_Duration_Intermediary_TrueAndCorrect">Tax Agent</tns:PersonNameDetails.Position.Text>
+    <!-- IITR581 -->
+    <tns:ElectronicContact.Telephone.Country.Code contextRef="Context_Duration_Intermediary_TrueAndCorrect">03</tns:ElectronicContact.Telephone.Country.Code>
+    <!-- IITR541 -->
+    <tns:ElectronicContact.Telephone.Minimal.Number contextRef="Context_Duration_Intermediary_TrueAndCorrect">45769748</tns:ElectronicContact.Telephone.Minimal.Number>
+    <!-- IITR543 -->
+    <tns:Declaration.Signature.Date contextRef="Context_Duration_Intermediary_TrueAndCorrect">2023-07-14</tns:Declaration.Signature.Date>
+    <!-- IITR544 -->
+    <tns:Declaration.StatementAccepted.Indicator contextRef="Context_Duration_Intermediary_TrueAndCorrect">true</tns:Declaration.StatementAccepted.Indicator>
+    <!-- IITR545 -->
+    <tns:Declaration.SignatoryIdentifier.Text contextRef="Context_Duration_Intermediary_TrueAndCorrect">Accepted</tns:Declaration.SignatoryIdentifier.Text>
+    <!-- Additional tax agent details -->
+    <!-- IITR536 -->
+    <tns:Identifiers.TaxAgentClientReference.Text contextRef="Context_Duration_Intermediary_TrueAndCorrect">abc</tns:Identifiers.TaxAgentClientReference.Text>
+    <!-- IITR542 -->
+    <tns:Identifiers.TaxAgentNumber.Identifier contextRef="Context_Duration_Intermediary_TrueAndCorrect">17801003</tns:Identifiers.TaxAgentNumber.Identifier>
+</ins:xbrl>
