@@ -1,5 +1,7 @@
 package com.seotrove.demo.v4_current.annotations;
 
+import org.xbrl.x2003.instance.ContextEntityType;
+
 import java.lang.annotation.*;
 
 @Target(ElementType.FIELD)
@@ -18,7 +20,7 @@ public @interface XbrlContextField {
      * Each context class should expose its own nested types for valid fields
      * (e.g., ContextEntityType.Identifier, ContextPeriodType.StartDate, etc.).
      */
-    Class<?> field();
+    Class<ContextEntityType.Identifier> field();
 }
 
 /*
