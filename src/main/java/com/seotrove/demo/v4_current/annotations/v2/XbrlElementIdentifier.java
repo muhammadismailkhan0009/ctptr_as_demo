@@ -1,5 +1,7 @@
 package com.seotrove.demo.v4_current.annotations.v2;
 
+import com.seotrove.demo.v4_current.annotations.v2.domain.units.UnitType;
+
 import java.lang.annotation.*;
 
 @Target(ElementType.FIELD)
@@ -14,5 +16,9 @@ public @interface XbrlElementIdentifier {
      * Example:
      * ReportingPartyContext.class
      */
-    String context();
+    String contextRef();
+
+    String unitRef() default "";
+
+    UnitType unitType() default UnitType.NONE;
 }

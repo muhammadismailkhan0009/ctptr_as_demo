@@ -2,16 +2,32 @@
   <lin:schemaRef xlin:type="simple" xlin:href="http://sbr.gov.au/taxonomy/sbr_au_reports/ato/iitr/iitr_0012/ato.iitr.0012.2025.lodge.01.00.report.xsd"/>
   <ins:context id="INT.TrueAndCorrect">
     <ins:entity>
-      <ins:identifier scheme="http://www.abr.gov.au/abn">abn</ins:identifier>
+      <ins:identifier scheme="http://www.abr.gov.au/abn">INT.TrueAndCorrect</ins:identifier>
       <ins:segment>
         <xbr:explicitMember dimension="iitr:ReportPartyTypeDimension">iitr:Intermediary</xbr:explicitMember>
         <xbr:explicitMember dimension="iitr:DeclarationTypeDimension">iitr:TrueAndCorrect</xbr:explicitMember>
       </ins:segment>
     </ins:entity>
     <ins:period>
-      <ins:startDate>2025-10-28+05:00</ins:startDate>
-      <ins:endDate>2025-10-28+05:00</ins:endDate>
+      <ins:startDate>2025-11-03+05:00</ins:startDate>
+      <ins:endDate>2025-11-03+05:00</ins:endDate>
     </ins:period>
   </ins:context>
+  <ins:context id="RP">
+    <ins:entity>
+      <ins:identifier scheme="http://www.ato.gov.au/tfn">RP</ins:identifier>
+      <ins:segment>
+        <xbr:explicitMember dimension="iitr:ReportPartyTypeDimension">iitr:ReportingParty</xbr:explicitMember>
+      </ins:segment>
+    </ins:entity>
+    <ins:period>
+      <ins:startDate>2025-11-03+05:00</ins:startDate>
+      <ins:endDate>2025-11-03+05:00</ins:endDate>
+    </ins:period>
+  </ins:context>
+  <iitr:IncomeTax.InvestmentPartnershipOtherSource.Amount contextRef="RP" unitRef="u1">11.0</iitr:IncomeTax.InvestmentPartnershipOtherSource.Amount>
   <iitr:PersonUnstructuredName.FullName.Text contextRef="INT.TrueAndCorrect">12</iitr:PersonUnstructuredName.FullName.Text>
+  <ins:unit id="u1">
+    <ins:measure xmlns:iso4="http://www.xbrl.org/2003/iso4217">iso4:AUD</ins:measure>
+  </ins:unit>
 </ins:xbrl>

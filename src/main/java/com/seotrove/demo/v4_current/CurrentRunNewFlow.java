@@ -1,7 +1,6 @@
 package com.seotrove.demo.v4_current;
 
 import com.seotrove.demo.v4_current.dtos.TaxData;
-import com.seotrove.demo.v4_current.mapper.XbrlMapper;
 import org.apache.xmlbeans.XmlError;
 import org.apache.xmlbeans.XmlObject;
 import org.apache.xmlbeans.XmlOptions;
@@ -11,6 +10,7 @@ import org.xbrl.x2003.instance.XbrlDocument;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import static com.seotrove.demo.v4_current.XmlBeansRun.setOptions;
@@ -24,9 +24,11 @@ public class CurrentRunNewFlow {
 
         TaxData dto = new TaxData(
                 "7",
-                12
+                12,
+                Calendar.getInstance(),
+                Calendar.getInstance(),
+                Double.MIN_VALUE
         );
-        XbrlMapper.map(dto, xbrl);
 
 //        var taxClientinfo = new TaxAgentInfo("abc", "17801003");
 //        XbrlMapper.map(taxClientinfo, xbrl);

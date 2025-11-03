@@ -1,30 +1,26 @@
 package com.seotrove.demo.v4_current.mapper.context_from_excel;
 
+import com.seotrove.demo.v4_current.annotations.v2.domain.ContextDataModel;
 import org.w3c.dom.Node;
-import org.xbrl.x2003.instance.ContextDocument;
 import org.xbrl.x2003.instance.DateUnion;
 import org.xbrl.x2003.instance.XbrlDocument;
 import org.xbrl.x2006.xbrldi.ExplicitMemberDocument;
 import org.xbrl.x2006.xbrldi.TypedMemberDocument;
 
 import javax.xml.namespace.QName;
-import java.util.Calendar;
 
 public final class GenericContextBuilder {
 
-    public record ContextData(String label, String identifierValue, Calendar startDate, Calendar endDate) {
-    }
-
-    public static ContextDocument.Context build(XbrlDocument.Xbrl xbrl, ContextRow row, ContextData contextData) {
+    public static void build(XbrlDocument.Xbrl xbrl, ContextRow row, ContextDataModel contextData) {
         var ctx = xbrl.addNewContext();
 //        ctx.setId(row.label != null ? row.label : "CTX_" + row.seqNum);
-        ctx.setId(contextData.label);
+        ctx.setId(contextData.getLabel());
 
         // ENTITY
         var entity = ctx.addNewEntity();
         var identifier = entity.addNewIdentifier();
         identifier.setScheme(row.identifierScheme);
-        identifier.setStringValue(contextData.identifierValue);
+        identifier.setStringValue(contextData.getLabel());
 
         // SEGMENT (Dimensions)
         var segment = entity.addNewSegment();
@@ -40,13 +36,12 @@ public final class GenericContextBuilder {
         // PERIOD
         var period = ctx.addNewPeriod();
         if ("duration".equalsIgnoreCase(row.periodType)) {
-            period.setStartDate(contextData.startDate);
-            period.setEndDate(contextData.endDate);
+            period.setStartDate(contextData.getStartDate());
+            period.setEndDate(contextData.getEndDate());
         } else {
             period.xsetInstant(DateUnion.Factory.newValue(row.startDate));
         }
 
-        return ctx;
     }
 
     public static void addExplicitMember(Node segmentNode, String ns, String dim, String val) {

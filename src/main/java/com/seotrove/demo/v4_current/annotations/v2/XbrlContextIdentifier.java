@@ -1,7 +1,11 @@
 package com.seotrove.demo.v4_current.annotations.v2;
 
-import org.xbrl.x2003.instance.ContextEntityType;
+import com.seotrove.demo.v4_current.annotations.v2.domain.XbrlContextFieldNames;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+@Retention(RetentionPolicy.RUNTIME)
 public @interface XbrlContextIdentifier {
 
     String label();
@@ -11,5 +15,6 @@ public @interface XbrlContextIdentifier {
      * Each context class should expose its own nested types for valid fields
      * (e.g., ContextEntityType.Identifier, ContextPeriodType.StartDate, etc.).
      */
-    Class<ContextEntityType.Identifier> field();
+    XbrlContextFieldNames field();
+
 }
